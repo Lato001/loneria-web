@@ -70,4 +70,20 @@ describe("buildWhatsAppUrl", () => {
     expect(result.href).toContain("%26"); // &
     expect(result.href).toContain("Ca%C3%B1o"); // Caño
   });
+
+  it("falls back to the canonical business number when baseUrl is undefined", () => {
+    // VITE_WHATSAPP_URL isn't set in CI — the deployed bundle embeds
+    // undefined. The CTA must still produce a working wa.me link.
+    const products = [{ title: "Broche Casco Atornillado" }];
+    const result = buildWhatsAppUrl(products, undefined, PAGE_URL);
+
+    expect(result.isTooLong).toBe(false);
+    expect(result.href).toMatch(/^https:\/\/wa\.me\/5491169906255\?text=/);
+    expect(result.href).toContain("Broche+Casco+Atornillado");
+  });
+
+  it("falls back when baseUrl is an empty string", () => {
+    const result = buildWhatsAppUrl([], "", PAGE_URL);
+    expect(result.href).toMatch(/^https:\/\/wa\.me\/5491169906255\?text=/);
+  });
 });
