@@ -47,29 +47,21 @@ describe('Footer', () => {
   });
 
   describe('DevBadge signature', () => {
-    it('renders the developer name, role and avatar photo in the signature line', () => {
+    it('renders the "Powered by: {name}" credit line', () => {
       renderFooter();
-      expect(screen.getByText('Desarrollado por')).toBeInTheDocument();
-      expect(screen.getByText('Lautaro Camejo')).toBeInTheDocument();
-      // The badge now uses a photo avatar instead of initials; the <img>
-      // alt matches the developer name.
-      expect(screen.getByAltText('Lautaro Camejo')).toBeInTheDocument();
+      expect(screen.getByText('Powered by: Lato')).toBeInTheDocument();
     });
 
     it('links to the dev LinkedIn profile from the badge', () => {
       renderFooter();
-      // The badge renders two anchors with this aria-label (avatar wrapper +
-      // icon-only button). Assert each one points at the right URL.
-      const linkedinLinks = screen.getAllByRole('link', {
-        name: /LinkedIn de Lautaro Camejo/i,
+      // The badge is a single anchor with an aria-label derived from the name.
+      const linkedinLink = screen.getByRole('link', {
+        name: /Lato's Contact/i,
       });
-      expect(linkedinLinks.length).toBeGreaterThanOrEqual(1);
-      for (const link of linkedinLinks) {
-        expect(link).toHaveAttribute(
-          'href',
-          'https://www.linkedin.com/in/lautaro-camejo-837339247/',
-        );
-      }
+      expect(linkedinLink).toHaveAttribute(
+        'href',
+        'https://www.linkedin.com/in/lautaro-camejo-837339247/',
+      );
     });
 
     it('does not render a WhatsApp link from the dev badge', () => {
@@ -78,7 +70,7 @@ describe('Footer', () => {
       // regression net tight if someone re-adds whatsappNumber later.
       renderFooter();
       const whatsappLinks = screen.queryAllByRole('link', {
-        name: /Escribir a Lautaro Camejo por WhatsApp/i,
+        name: /Escribir a .* por WhatsApp/i,
       });
       expect(whatsappLinks).toHaveLength(0);
     });
