@@ -87,7 +87,7 @@ export function Home() {
             <Masonry
               items={homeMasonryItems}
               variant="mosaic"
-              ease="power3.out"
+              ease="none"
               duration={0.6}
               stagger={0.05}
               scaleOnHover
@@ -129,7 +129,7 @@ export function Home() {
         title={data.home.sections.faq.title}
         >
         <Accordion items={data.home.faqs} />
-        <NextPageCta className="pt-20" />
+        <NextPageCta className="pt-15" />
       </SectionWrapper>
       </div>
 

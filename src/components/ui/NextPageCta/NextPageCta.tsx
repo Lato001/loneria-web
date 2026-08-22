@@ -52,7 +52,7 @@ export function NextPageCta({ className }: { className?: string } = {}) {
   if (index === -1) return null;
   const next = NEXT_PATH_ORDER[(index + 1) % NEXT_PATH_ORDER.length];
   return (
-    <div className={`flex justify-end pt-20 ${className}`}>
+    <div className={`flex justify-end  ${className}`}>
       <Link
         to={next.path}
         className="inline-flex items-center gap-3 rounded-full bg-pr-aquamarine px-6 py-3 font-poppins text-base font-bold text-sc-ocean-blue shadow-md transition-all duration-300 hover:scale-105 hover:text-sc-chalk hover:shadow-pr-aquamarine/30 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pr-aquamarine"

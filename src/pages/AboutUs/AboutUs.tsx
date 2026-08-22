@@ -91,7 +91,7 @@ export function AboutUs() {
 
 
 
-        <NextPageCta className="pt-5" />
+        <NextPageCta className="pt-10" />
         </div>
 
       </div>
