@@ -11,7 +11,7 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { IconBrandLinkedin, IconBrandWhatsapp } from "@tabler/icons-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 import type { DevBadgeProps } from "./DevBadge.types";
 
 const springConfig = { stiffness: 260, damping: 20 };
@@ -113,16 +113,6 @@ export function DevBadge({
             {name}
           </a>
         </span>
-
-        <a
-          href={linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`LinkedIn de ${name}`}
-          className="flex h-9 w-9 items-center justify-center rounded-full text-[#B9C0E8] transition-colors duration-200 hover:bg-white/10 hover:text-[#4FE0D0]"
-        >
-          <IconBrandLinkedin size={30} stroke={1.75} />
-        </a>
 
         {whatsappUrl && (
           <a
