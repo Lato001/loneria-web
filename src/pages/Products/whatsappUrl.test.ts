@@ -14,14 +14,15 @@ describe("buildWhatsAppUrl", () => {
     const result = buildWhatsAppUrl(products, BASE_URL, PAGE_URL);
 
     // The URL should contain the titles in order, with bullet separators
-    // "•" (U+2022) encodes to %E2%80%A2, newline to %0A
-    expect(result.href).toContain("Broche%20Lona%20Macho%20Bronce%20Blanco");
-    expect(result.href).toContain("%E2%80%A2%20Broche%20Lona%20Hembra%20Bronce");
-    expect(result.href).toContain("%E2%80%A2%20Caballete%20Tubo%20Acero%20Inoxidable");
+    // "•" (U+2022) encodes to %E2%80%A2. Spaces encode as "+" (URLSearchParams
+    // form-encoding, equivalent to %20 in query strings).
+    expect(result.href).toContain("Broche+Lona+Macho+Bronce+Blanco");
+    expect(result.href).toContain("%E2%80%A2+Broche+Lona+Hembra+Bronce");
+    expect(result.href).toContain("%E2%80%A2+Caballete+Tubo+Acero+Inoxidable");
 
     // Verify order: b1 title appears before b2 title in the URL
-    const idx1 = result.href.indexOf("Broche%20Lona%20Macho%20Bronce%20Blanco");
-    const idx2 = result.href.indexOf("Broche%20Lona%20Hembra%20Bronce");
+    const idx1 = result.href.indexOf("Broche+Lona+Macho+Bronce+Blanco");
+    const idx2 = result.href.indexOf("Broche+Lona+Hembra+Bronce");
     const idx3 = result.href.indexOf("Caballete");
     expect(idx1).toBeLessThan(idx2);
     expect(idx2).toBeLessThan(idx3);

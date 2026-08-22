@@ -7,6 +7,12 @@
  * The "Página" line points at the canonical products URL regardless of
  * where the CTA was clicked — keeps the message consistent and avoids
  * leaking localhost / preview origins into outbound WhatsApp messages.
+ *
+ * `baseUrl` is expected to look like `https://wa.me/<phone>?text=<preset>`.
+ * We preserve the phone (and any other query params the caller added) and
+ * replace `text` with the products message. Earlier versions concatenated
+ * baseUrl + ' ' + encoded which produced two URLs joined by a space —
+ * malformed and the browser dropped the products list.
  */
 export interface BuildWhatsAppUrlResult {
   href: string;
@@ -34,8 +40,12 @@ export function buildWhatsAppUrl(
     `Página: ${PRODUCTS_CANONICAL_URL}`,
   ].join("\n");
 
-  const encoded = encodeURIComponent(message);
-  const href = `${baseUrl} ${encoded}`;
+  // Parse the caller's base URL so we don't lose the phone (or any extra
+  // query params they may have set). Override only `text` with our message.
+  const [basePart, queryPart = ""] = baseUrl.split("?");
+  const params = new URLSearchParams(queryPart);
+  params.set("text", message);
+  const href = `${basePart}?${params.toString()}`;
 
   if (href.length > WHATSAPP_URL_MAX_LENGTH) {
     return { href: "", isTooLong: true, length: href.length };

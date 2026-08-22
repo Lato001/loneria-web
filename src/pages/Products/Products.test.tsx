@@ -285,7 +285,7 @@ describe("Products page", () => {
     });
     expect(whatsappLink).toHaveAttribute(
       "href",
-      expect.stringContaining("Broche%20Lona%20Macho%20Bronce%20Blanco"),
+      expect.stringContaining("Broche+Lona+Macho+Bronce+Blanco"),
     );
   });
 
