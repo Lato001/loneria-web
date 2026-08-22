@@ -14,7 +14,7 @@ export type { Categoria, Trabajo } from "../types/trabajo";
 import type { Categoria, Trabajo } from "../types/trabajo";
 
 // ─── Unions ──────────────────────────────────────────────────────────────
-export type SocialPlatform = "Facebook" | "Instagram" | "WhatsApp";
+export type SocialPlatform = "Facebook" | "Instagram";
 export type ContactIconKey = "phone" | "mail" | "mapPin";
 
 // ─── Navigation ──────────────────────────────────────────────────────────

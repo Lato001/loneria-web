@@ -1,7 +1,6 @@
 import {
   IconBrandFacebook,
   IconBrandInstagram,
-  IconBrandWhatsapp,
   IconPhone,
   IconMail,
   IconMapPin,
@@ -18,7 +17,6 @@ import devPhoto from "../../assets/img/dev-badge/dev-photo.webp";
 const socialIconMap: Record<SocialPlatform, Icon> = {
   Facebook: IconBrandFacebook,
   Instagram: IconBrandInstagram,
-  WhatsApp: IconBrandWhatsapp,
 };
 
 const contactIconMap: Record<ContactIconKey, Icon> = {

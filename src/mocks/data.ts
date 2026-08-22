@@ -387,7 +387,6 @@ export const data = {
       social: [
         { platform: "Facebook", href: "https://www.facebook.com/profile.php?id=100071098357153" },
         { platform: "Instagram", href: "https://www.instagram.com/lonerianavalelmono/" },
-        { platform: "WhatsApp", href: `${import.meta.env.VITE_WHATSAPP_URL}` },
       ],
       contact: [
         {
