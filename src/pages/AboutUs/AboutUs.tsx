@@ -91,7 +91,7 @@ export function AboutUs() {
 
 
 
-        <NextPageCta className="pt-10" />
+        <NextPageCta className="pt-10 !justify-center" />
         </div>
 
       </div>

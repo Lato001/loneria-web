@@ -288,7 +288,7 @@ export function WorksSection({ thumbMap, imageDims }: WorksSectionProps) {
           hoverScale={0.95}
           colorShiftOnHover={true}
           footer={
-            <div className="pb-20">
+            <div>
               {hasMoreAlbumItems && (
                 <div className="flex flex-col items-center gap-4 pt-12">
                   <p className="font-poppins text-lg text-sc-chalk/70">
@@ -306,7 +306,7 @@ export function WorksSection({ thumbMap, imageDims }: WorksSectionProps) {
                   </Button>
                 </div>
               )}
-              <NextPageCta className="pt-2" />
+              <NextPageCta className="pt-15" />
             </div>
           }
           onItemClick={(item) => handleAlbumClick(item as AlbumImage)}

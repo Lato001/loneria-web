@@ -105,7 +105,7 @@ export function Home() {
         </SectionWrapper>
       
       <SectionWrapper
-      className="bg-gradient-to-b from-sc-ocean-blue/20 to-sc-sky-blue/35"
+      className="bg-gradient-to-b from-sc-ocean-blue/20 to-sc-sky-blue/35 pb-20"
         titlesAlign={data.home.sections.testimonials.titlesAlign}
         eyebrow={data.home.sections.testimonials.eyebrow}
         title={data.home.sections.testimonials.title}
@@ -121,7 +121,7 @@ export function Home() {
         </div>
       </SectionWrapper>
       <SectionWrapper
-        className="bg-gradient-to-b from-sc-sky-blue/35 to-sc-ocean-blue"
+        className="bg-gradient-to-b from-sc-sky-blue/35 to-sc-ocean-blue pb-20"
         theme={data.home.sections.faq.theme}
         titlesAlign={data.home.sections.faq.titlesAlign}
         eyebrow={data.home.sections.faq.eyebrow}
