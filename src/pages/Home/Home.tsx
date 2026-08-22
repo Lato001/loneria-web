@@ -12,7 +12,6 @@ import { useDocumentMeta } from "../../hooks/useDocumentMeta";
 import type { MasonryItem } from "../../mocks/types";
 import { data } from "../../mocks/data";
 import { PATHS } from "../../routes/routes";
-import lineasonduladasImg from '../../assets/backgrounds/formas-lineas-onduladas.svg'
 // ── Nuevos imports para el masonry de la home ──────────────────────────────
 import capota01 from "../../assets/img/works/capota/thumbs/capota-01.webp";
 import carpa01 from "../../assets/img/works/carpa/thumbs/carpa-01.webp";
