@@ -42,8 +42,8 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-sc-ocean-blue p-2 ">
-      <div className="mx-auto flex max-w-295 pb-4 flex-col items-center gap-6 lg:flex-row lg:justify-between border-b border-pr-aquamarine/60">
+    <footer className="bg-sc-ocean-blue p-2 border-t-1 border-pr-aquamarine ">
+      <div className="mx-auto flex max-w-295 pb-2 flex-col items-center gap-6 lg:flex-row lg:justify-between border-b border-pr-aquamarine/60">
         {/* Logo */}
         <div>
           <a href="/" className="flex items-center gap-2">
