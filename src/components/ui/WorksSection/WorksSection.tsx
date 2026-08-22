@@ -288,9 +288,9 @@ export function WorksSection({ thumbMap, imageDims }: WorksSectionProps) {
           hoverScale={0.95}
           colorShiftOnHover={true}
           footer={
-            <div className="flex flex-col items-end gap-4 pb-20 pt-12">
+            <div className="pb-20">
               {hasMoreAlbumItems && (
-                <>
+                <div className="flex flex-col items-center gap-4 pt-12">
                   <p className="font-poppins text-lg text-sc-chalk/70">
                     Mostrando {Math.min(visibleCount, albumItems.length)} de {albumItems.length}
                   </p>
@@ -304,10 +304,9 @@ export function WorksSection({ thumbMap, imageDims }: WorksSectionProps) {
                   >
                     Cargar más
                   </Button>
-                </>
+                </div>
               )}
-              
-              <NextPageCta className="!pt-2" />
+              <NextPageCta className="pt-2" />
             </div>
           }
           onItemClick={(item) => handleAlbumClick(item as AlbumImage)}
