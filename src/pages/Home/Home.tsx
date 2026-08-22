@@ -66,7 +66,7 @@ export function Home() {
 
         <SectionWrapper
 
-        className="bg-gradient-to-b from-sc-ocean-blue to-pr-hero-blue/20"
+        className="bg-gradient-to-b from-sc-ocean-blue/20 to-sc-sky-blue/35"
           titlesAlign={data.home.sections.whatWeOffer.titlesAlign}
           eyebrow={data.home.sections.whatWeOffer.eyebrow}
           title={data.home.sections.whatWeOffer.title}
@@ -77,8 +77,8 @@ export function Home() {
             />
         </SectionWrapper>
         <SectionWrapper
-        className="bg-gradient-to-b from-pr-hero-blue/20 to-sc-ocean-blue/10"
-          backgroundImage={lineasonduladasImg}
+        className="bg-gradient-to-b from-sc-sky-blue/35 to-sc-ocean-blue"
+        
           titlesAlign={data.home.sections.aboutUs.titlesAlign}
           eyebrow={data.home.sections.aboutUs.eyebrow}
           title={data.home.sections.aboutUs.title}
@@ -87,7 +87,7 @@ export function Home() {
             <Masonry
               items={homeMasonryItems}
               variant="mosaic"
-              ease="none"
+              ease="power3.out"
               duration={0.6}
               stagger={0.05}
               scaleOnHover
